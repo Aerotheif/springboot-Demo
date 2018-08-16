@@ -1,0 +1,17 @@
+@keyframes login_register_change
+{
+    0%   {transform: rotate(0deg);}
+    50%  {transform: rotate(60deg);}
+    100% {transform: rotate(0deg);}
+}
+ 
+@-webkit-keyframes login_register_change /* Safari 与 Chrome */
+{
+   	0%   {transform: rotate(0deg);}
+    50%  {transform: rotate(60deg);}
+    100% {transform: rotate(0deg);}
+}
+.div_show{
+	animation:login_register_change 1s;
+	-webkit-animation:login_register_change 1s; /* Safari and Chrome */
+}

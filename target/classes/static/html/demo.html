@@ -1,0 +1,148 @@
+<!--
+	作者：twist.uau@gmail.com
+	时间：2018-08-15
+	描述：项目模板
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>demo</title>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!--default CSS-->
+		<link rel="stylesheet" href="../css/default.css">
+		<link rel="stylesheet" href="../css/animation.css">
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+
+	<body>
+		<div id="vue">
+			<!--导航栏开始-->
+			<nav class="navbar navbar-fixed-top my-navbar" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+		                    <span class="sr-only">切换导航</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+						<a class="navbar-brand" href="#">Aerothief</a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="navbar">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="javacript:void(0);">Home</a>
+							</li>
+							<li>
+								<a v-on:click="change_form($event)" href="javacript:void(0);">Register</a>
+							</li>
+							<li>
+								<a href="javacript:void(0);">contact us</a>
+							</li>
+
+							<!--<li>
+		                        <a href="#">Asp.Net</a>
+		                    </li>-->
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="input-group has-warning">
+								<input type="text" class="form-control success" placeholder="search" aria-describedby="search">
+								<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</nav>
+			<!--导航栏结束-->
+			<!--页面主题内容开始-->
+			<div class="bg">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-10 col-xs-10 col-md-offset-3 col-sm-offset-1 col-xs-offset-1 login_register_father">
+							<!--登录开始-->
+							<div class="login_div div_show_animation">
+								<p>登录</p>
+								<div class="input-group has-success">
+									<input type="text" class="form-control" placeholder="username" aria-describedby="username">
+									<span class="input-group-addon" id="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+								</div>
+								<div class="input-group has-warning">
+									<input type="text" class="form-control" placeholder="password" aria-describedby="password">
+									<span class="input-group-addon" id="password"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
+								</div>
+
+								<label>
+          						<input type="checkbox"> Remember me
+        					</label>
+								<button id="btn_login" type="button" class="btn btn-success">登录</button>
+							</div>
+							<!--登录结束-->
+							<!--注册开始-->
+							<div class="register_div login_register_hidden">
+								<p>注册</p>
+								<div class="input-group has-success">
+									<input type="text" class="form-control" placeholder="username" aria-describedby="username">
+									<span class="input-group-addon" id="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+								</div>
+								<div class="input-group has-warning">
+									<input type="password" class="form-control" placeholder="password" aria-describedby="password">
+									<span class="input-group-addon" id="password"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
+								</div>
+								<button id="btn_register" type="button" class="btn btn-warning">注册</button>
+							</div>
+							<!--注册结束-->
+						</div>
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="container">
+						<p class="text-muted"><strong>Aerothief HomePage</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp粤ICP备18032352号-1</p>
+					</div>
+				</footer>
+			</div>
+			<!--页面主题内容结束-->
+		</div>
+	</body>
+	<!--jQuery-->
+	<!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>-->
+	<script src="../../common/jquery-3.3.1.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script>
+		var my_vue = new Vue({
+			el: "#vue",
+			methods: {
+				change_form: function() {
+					if($(event.currentTarget).text() == "Register") {
+						$(event.currentTarget).text("Login");
+						//							$(".login_div").addClass("login_register_hidden");
+						//							$(".register_div").removeClass("login_register_hidden"); 
+						$(".login_div").fadeOut();
+						$(".register_div").fadeIn();
+						$(".register_div").addClass("div_show");
+					} else if($(event.currentTarget).text() == "Login") {
+						$(event.currentTarget).text("Register");
+						//							$(".register_div").addClass("login_register_hidden");
+						//							$(".login_div").removeClass("login_register_hidden");
+						$(".register_div").fadeOut();
+						$(".login_div").fadeIn();
+						$(".login_div").addClass("div_show");
+					} else {
+						alert(1)
+					}
+					if(document.body.clientWidth < 750) {
+						$(".navbar-toggle").click();
+					}
+				},
+			}
+		});
+	</script>
+	<script src="../js/default.js"></script>
+
+</html>
