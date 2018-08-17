@@ -90,4 +90,13 @@
       mail = #{mail,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="checkUsername" parameterType="String" resultType="int">
+    select count(1) from g_user where username=#{username}
+  </select>
+  <select id="selectLogin" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from g_user
+    where username=#{username} and password=#{password}
+  </select>
 </mapper>

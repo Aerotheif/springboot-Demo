@@ -68,18 +68,17 @@
                     <div class="login_div div_show_animation">
                         <p>登录</p>
                         <div class="input-group has-success">
-                            <input type="text" class="form-control" placeholder="username" aria-describedby="username">
-                            <span class="input-group-addon" id="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            <input v-model="login_username" type="text" class="form-control" placeholder="username" aria-describedby="login_username">
+                            <span class="input-group-addon" id="login_username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                         </div>
                         <div class="input-group has-warning">
-                            <input type="text" class="form-control" placeholder="password" aria-describedby="password">
-                            <span class="input-group-addon" id="password"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
+                            <input v-model="login_password" type="password" class="form-control" placeholder="password" aria-describedby="login_password">
+                            <span class="input-group-addon" id="login_password"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
                         </div>
-
                         <label>
-                            <input type="checkbox"> Remember me
+                            <input type="checkbox" v-model="login_remember_me"> Remember me
                         </label>
-                        <button id="btn_login" type="button" class="btn btn-success">登录</button>
+                        <button id="btn_login" type="button" class="btn btn-success" v-on:click="login()">登录</button>
                     </div>
                     <!--登录结束-->
                     <!--注册开始-->
@@ -109,13 +108,21 @@
 </div>
 </body>
 <!--jQuery-->
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<!--常量-->
+<script src="js/const.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="js/default.js"></script>
 <script>
     var my_vue = new Vue({
         el: "#vue",
+        data:{
+            login_username:"",
+            login_password:"",
+            login_remember_me:false
+        },
         methods: {
             change_form: function() {
                 if($(event.currentTarget).text() == "Register") {
@@ -139,9 +146,35 @@
                     $(".navbar-toggle").click();
                 }
             },
+            login:function () {
+                var _this=this;
+                $.post({
+                    url:localObj+"user/login.do",
+                    data:{
+                        username:this.login_username,
+                        password:this.login_password,
+                    },
+                    success:function (data) {
+                        if(_this.login_remember_me){
+                            setCookie("username",_this.login_username);
+                            setCookie("password",_this.login_password);
+                        }else{
+                            delCookie("username");
+                            delCookie("password");
+                        }
+                    }
+                });
+            }
+        },
+        created:function () {
+            if(getCookie("username")!=null&&getCookie("password")!=null){
+                this.login_password=getCookie("password");
+                this.login_username=getCookie("username");
+                this.login_remember_me=true;
+            }
         }
     });
 </script>
-<script src="js/default.js"></script>
+
 
 </html>

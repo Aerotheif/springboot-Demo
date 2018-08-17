@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 80
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/homepage?useUnicode=true&useSSL=false&characterEncoding=UTF8&serverTimezone=GMT
@@ -17,3 +17,6 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
   returnPageInfo: check
+
+#md5加密盐值
+MD5Sult: 31&^^$%&BSD":>}{}"|

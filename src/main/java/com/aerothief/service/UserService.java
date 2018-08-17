@@ -1,8 +1,11 @@
 package com.aerothief.service;
 
+import com.aerothief.common.ServerResponse;
 import com.aerothief.model.User;
+
+import javax.servlet.ServletRequest;
 
 public interface UserService {
     int addUser(User user);
-    User getUserByKey(int key);
+    ServerResponse<User> login(ServletRequest request);
 }
