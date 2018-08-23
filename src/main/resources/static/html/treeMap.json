@@ -1,0 +1,1225 @@
+{
+    "status": 0,
+    "msg": null,
+    "data": {
+        "step": 0,
+        "id": 12,
+        "fatherId": -1,
+        "name": "Java技能树",
+        "value": 563,
+        "children": [
+            {
+                "step": 1,
+                "id": 19,
+                "fatherId": 12,
+                "name": "Java核心语法",
+                "value": 99,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 20,
+                        "fatherId": 19,
+                        "name": "环境变量",
+                        "value": 2,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 21,
+                        "fatherId": 19,
+                        "name": "IDE",
+                        "value": 2,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 22,
+                                "fatherId": 21,
+                                "name": "InteliJ IDEA",
+                                "value": 1,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 23,
+                                "fatherId": 21,
+                                "name": "Eclipse",
+                                "value": 1,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "step": 2,
+                        "id": 24,
+                        "fatherId": 19,
+                        "name": "数据类型",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 25,
+                        "fatherId": 19,
+                        "name": "变量",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 26,
+                        "fatherId": 19,
+                        "name": "运算符",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 27,
+                        "fatherId": 19,
+                        "name": "流程控制",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 28,
+                        "fatherId": 19,
+                        "name": "String类型",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 29,
+                        "fatherId": 19,
+                        "name": "数组",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 30,
+                        "fatherId": 19,
+                        "name": "面向对象",
+                        "value": 8,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 31,
+                        "fatherId": 19,
+                        "name": "包装类",
+                        "value": 7,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 32,
+                        "fatherId": 19,
+                        "name": "格式化",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 33,
+                        "fatherId": 19,
+                        "name": "接口继承多态",
+                        "value": 8,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 34,
+                        "fatherId": 19,
+                        "name": "集合",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 35,
+                        "fatherId": 19,
+                        "name": "异常",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 36,
+                        "fatherId": 19,
+                        "name": "IO流处理",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 37,
+                        "fatherId": 19,
+                        "name": "反射",
+                        "value": 7,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 38,
+                        "fatherId": 19,
+                        "name": "枚举类型",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 39,
+                        "fatherId": 19,
+                        "name": "多线程",
+                        "value": 7,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 40,
+                        "fatherId": 19,
+                        "name": "网络通信",
+                        "value": 4,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 41,
+                        "fatherId": 19,
+                        "name": "JDBC",
+                        "value": 5,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 42,
+                "fatherId": 12,
+                "name": "Java Web",
+                "value": 75,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 43,
+                        "fatherId": 42,
+                        "name": "html",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 44,
+                        "fatherId": 42,
+                        "name": "css",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 45,
+                        "fatherId": 42,
+                        "name": "JavaScript",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 46,
+                        "fatherId": 42,
+                        "name": "DOM",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 47,
+                        "fatherId": 42,
+                        "name": "jQuery",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 48,
+                        "fatherId": 42,
+                        "name": "tomcat",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 49,
+                        "fatherId": 42,
+                        "name": "http协议",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 50,
+                        "fatherId": 42,
+                        "name": "servlet",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 51,
+                        "fatherId": 42,
+                        "name": "jsp",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 52,
+                        "fatherId": 42,
+                        "name": "jstl",
+                        "value": 2,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 53,
+                        "fatherId": 42,
+                        "name": "el表达式",
+                        "value": 2,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 54,
+                        "fatherId": 42,
+                        "name": "ajax",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 55,
+                        "fatherId": 42,
+                        "name": "json",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 56,
+                        "fatherId": 42,
+                        "name": "过滤器",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 57,
+                        "fatherId": 42,
+                        "name": "监听器",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 58,
+                        "fatherId": 42,
+                        "name": "linux",
+                        "value": 6,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 59,
+                        "fatherId": 42,
+                        "name": "log",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 60,
+                        "fatherId": 42,
+                        "name": "xml",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 61,
+                        "fatherId": 42,
+                        "name": "properties",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 62,
+                        "fatherId": 42,
+                        "name": "yml",
+                        "value": 3,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 63,
+                "fatherId": 12,
+                "name": "struts2",
+                "value": 26,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 64,
+                        "fatherId": 63,
+                        "name": "MVC",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 65,
+                        "fatherId": 63,
+                        "name": "struts2流程",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 66,
+                        "fatherId": 63,
+                        "name": "配置",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 67,
+                        "fatherId": 63,
+                        "name": "视图",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 68,
+                        "fatherId": 63,
+                        "name": "异常",
+                        "value": 2,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 69,
+                        "fatherId": 63,
+                        "name": "国际化",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 70,
+                        "fatherId": 63,
+                        "name": "ognl",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 71,
+                        "fatherId": 63,
+                        "name": "文件上传",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 72,
+                        "fatherId": 63,
+                        "name": "拦截器",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 73,
+                        "fatherId": 63,
+                        "name": "验证",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 74,
+                        "fatherId": 63,
+                        "name": "数据标签",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 75,
+                        "fatherId": 63,
+                        "name": "控制标签",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 76,
+                        "fatherId": 63,
+                        "name": "表单标签",
+                        "value": 1,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 77,
+                        "fatherId": 63,
+                        "name": "框架集成",
+                        "value": 2,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 78,
+                "fatherId": 12,
+                "name": "spring",
+                "value": 40,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 79,
+                        "fatherId": 78,
+                        "name": "spring 配置",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 80,
+                        "fatherId": 78,
+                        "name": "spring bean",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 81,
+                        "fatherId": 78,
+                        "name": "依赖注入",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 82,
+                        "fatherId": 78,
+                        "name": "注解",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 83,
+                        "fatherId": 78,
+                        "name": "bean 创建",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 84,
+                        "fatherId": 78,
+                        "name": "bean 生命周期",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 85,
+                        "fatherId": 78,
+                        "name": "spring 事务",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 86,
+                        "fatherId": 78,
+                        "name": "spring AOP",
+                        "value": 5,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 87,
+                "fatherId": 12,
+                "name": "spring MVC",
+                "value": 43,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 88,
+                        "fatherId": 87,
+                        "name": "spring MVC 配置",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 89,
+                        "fatherId": 87,
+                        "name": "spring MVC 注解配置",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 90,
+                        "fatherId": 87,
+                        "name": "spring MVC 注解",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 91,
+                        "fatherId": 87,
+                        "name": "jackson处理json",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 92,
+                        "fatherId": 87,
+                        "name": "数据模型",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 93,
+                        "fatherId": 87,
+                        "name": "视图解析",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 94,
+                        "fatherId": 87,
+                        "name": "RESTFUL 编码风格",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 95,
+                        "fatherId": 87,
+                        "name": "国际化",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 96,
+                        "fatherId": 87,
+                        "name": "文件上传",
+                        "value": 5,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 97,
+                "fatherId": 12,
+                "name": "ORM框架",
+                "value": 44,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 98,
+                        "fatherId": 97,
+                        "name": "mybatis",
+                        "value": 28,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 99,
+                                "fatherId": 98,
+                                "name": "配置文件",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 100,
+                                "fatherId": 98,
+                                "name": "别名 对象映射",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 101,
+                                "fatherId": 98,
+                                "name": "注解配置",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 102,
+                                "fatherId": 98,
+                                "name": "xml文件配置",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 103,
+                                "fatherId": 98,
+                                "name": "动态SQL",
+                                "value": 8,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "step": 2,
+                        "id": 104,
+                        "fatherId": 97,
+                        "name": "hibernate",
+                        "value": 16,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 105,
+                                "fatherId": 104,
+                                "name": "对象映射",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 106,
+                                "fatherId": 104,
+                                "name": "HQL",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 107,
+                                "fatherId": 104,
+                                "name": "批处理",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 108,
+                                "fatherId": 104,
+                                "name": "缓存",
+                                "value": 4,
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 109,
+                "fatherId": 12,
+                "name": "spring boot",
+                "value": 25,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 110,
+                        "fatherId": 109,
+                        "name": "内置容器",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 111,
+                        "fatherId": 109,
+                        "name": "starter",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 112,
+                        "fatherId": 109,
+                        "name": "部署方式",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 113,
+                        "fatherId": 109,
+                        "name": "监控",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 114,
+                        "fatherId": 109,
+                        "name": "虚拟化",
+                        "value": 5,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 115,
+                "fatherId": 12,
+                "name": "数据库",
+                "value": 122,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 116,
+                        "fatherId": 115,
+                        "name": "关系型数据库",
+                        "value": 74,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 118,
+                                "fatherId": 116,
+                                "name": "mysql",
+                                "value": 8,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 119,
+                                "fatherId": 116,
+                                "name": "oracle",
+                                "value": 8,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 120,
+                                "fatherId": 116,
+                                "name": "数据库操作",
+                                "value": 8,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 121,
+                                "fatherId": 116,
+                                "name": "表操作",
+                                "value": 8,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 122,
+                                "fatherId": 116,
+                                "name": "主键",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 123,
+                                "fatherId": 116,
+                                "name": "外键",
+                                "value": 2,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 124,
+                                "fatherId": 116,
+                                "name": "语句",
+                                "value": 8,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 125,
+                                "fatherId": 116,
+                                "name": "索引",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 126,
+                                "fatherId": 116,
+                                "name": "事务",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 127,
+                                "fatherId": 116,
+                                "name": "临时表",
+                                "value": 3,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 128,
+                                "fatherId": 116,
+                                "name": "分表",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 129,
+                                "fatherId": 116,
+                                "name": "分库",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 130,
+                                "fatherId": 116,
+                                "name": "主从备份",
+                                "value": 5,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "step": 2,
+                        "id": 117,
+                        "fatherId": 115,
+                        "name": "NO SQL",
+                        "value": 36,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 131,
+                                "fatherId": 117,
+                                "name": "redis",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 132,
+                                "fatherId": 117,
+                                "name": "mongoDB",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 133,
+                                "fatherId": 117,
+                                "name": "数据时效",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 134,
+                                "fatherId": 117,
+                                "name": "数据类型",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 135,
+                                "fatherId": 117,
+                                "name": "分区",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 136,
+                                "fatherId": 117,
+                                "name": "分片",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 137,
+                                "fatherId": 117,
+                                "name": "索引",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 138,
+                                "fatherId": 117,
+                                "name": "排序",
+                                "value": 4,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 139,
+                                "fatherId": 117,
+                                "name": "聚合",
+                                "value": 4,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "step": 2,
+                        "id": 140,
+                        "fatherId": 115,
+                        "name": "安全",
+                        "value": 4,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 141,
+                        "fatherId": 115,
+                        "name": "集群",
+                        "value": 4,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 142,
+                        "fatherId": 115,
+                        "name": "监控",
+                        "value": 4,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 143,
+                "fatherId": 12,
+                "name": "中间件",
+                "value": 45,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 144,
+                        "fatherId": 143,
+                        "name": "缓存",
+                        "value": 15,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 147,
+                                "fatherId": 144,
+                                "name": "Redis",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 148,
+                                "fatherId": 144,
+                                "name": "EhCache",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 149,
+                                "fatherId": 144,
+                                "name": "Memcache",
+                                "value": 5,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "step": 2,
+                        "id": 145,
+                        "fatherId": 143,
+                        "name": "搜索",
+                        "value": 15,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 150,
+                                "fatherId": 145,
+                                "name": "Lucene",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 151,
+                                "fatherId": 145,
+                                "name": "Solr",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 152,
+                                "fatherId": 145,
+                                "name": "ES",
+                                "value": 5,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "step": 2,
+                        "id": 146,
+                        "fatherId": 143,
+                        "name": "消息",
+                        "value": 15,
+                        "children": [
+                            {
+                                "step": 3,
+                                "id": 153,
+                                "fatherId": 146,
+                                "name": "ActiveMQ",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 154,
+                                "fatherId": 146,
+                                "name": "RabbitMQ",
+                                "value": 5,
+                                "children": []
+                            },
+                            {
+                                "step": 3,
+                                "id": 155,
+                                "fatherId": 146,
+                                "name": "kafuka",
+                                "value": 5,
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 156,
+                "fatherId": 12,
+                "name": "工具",
+                "value": 14,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 157,
+                        "fatherId": 156,
+                        "name": "svn",
+                        "value": 3,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 158,
+                        "fatherId": 156,
+                        "name": "git",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 159,
+                        "fatherId": 156,
+                        "name": "Maven",
+                        "value": 4,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 160,
+                        "fatherId": 156,
+                        "name": "Nexus",
+                        "value": 2,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "step": 1,
+                "id": 161,
+                "fatherId": 12,
+                "name": "其他",
+                "value": 30,
+                "children": [
+                    {
+                        "step": 2,
+                        "id": 162,
+                        "fatherId": 161,
+                        "name": "数据结构",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 163,
+                        "fatherId": 161,
+                        "name": "算法",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 164,
+                        "fatherId": 161,
+                        "name": "虚拟化",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 165,
+                        "fatherId": 161,
+                        "name": "大数据",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 166,
+                        "fatherId": 161,
+                        "name": "AI",
+                        "value": 5,
+                        "children": []
+                    },
+                    {
+                        "step": 2,
+                        "id": 167,
+                        "fatherId": 161,
+                        "name": "新的征程---GY",
+                        "value": 5,
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "success": true
+}

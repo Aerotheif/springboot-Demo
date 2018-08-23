@@ -1,0 +1,212 @@
+<!--
+	作者：twist.uau@gmail.com
+	时间：2018-08-15
+	描述：项目模板
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>demo</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--default CSS-->
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <link rel="stylesheet" href="../css/login.css" />
+</head>
+
+<body>
+<div id="vue" class="bg">
+    <!--导航栏开始-->
+    <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Aerothief</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="javacript:void(0);">Home</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Log out</a>
+                    </li>
+                    <li>
+                        <a href="javacript:void(0);">Contact us</a>
+                    </li>
+
+                    <!--<li>
+                        <a href="#">Asp.Net</a>
+                    </li>-->
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="input-group has-warning">
+                        <input type="text" class="form-control success" placeholder="search" aria-describedby="search">
+                        <span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--导航栏结束-->
+    <!--页面主题内容开始-->
+    <div class="main">
+        <div class="container-fluid">
+            <div class="jumbotron" style="padding: 0px">
+                <div id="skill" style="width: 100%;height:900px;margin: 0 auto;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--页面主题内容结束-->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><strong>Aerothief HomePage</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp粤ICP备18032352号-1</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="../js/const.js"></script>
+<!--<script src="../js/default.js"></script>-->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script type="text/javascript">
+    var dom = document.getElementById("skill");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    myChart.showLoading();
+
+    $.get(rootPath+"skill/skillJson.do", function (data) {
+        data=data.data.children[0].children;
+        myChart.hideLoading();
+        function colorMappingChange(value) {
+            var levelOption = getLevelOption(value);
+            chart.setOption({
+                series: [{
+                    levels: levelOption
+                }]
+            });
+        }
+
+        var formatUtil = echarts.format;
+
+        function getLevelOption() {
+            return [
+                {
+                    itemStyle: {
+                        normal: {
+                            borderColor: '#777',
+                            borderWidth: 0,
+                            gapWidth: 1
+                        }
+                    },
+                    upperLabel: {
+                        normal: {
+                            show: false
+                        }
+                    }
+                },
+                {
+                    itemStyle: {
+                        normal: {
+                            borderColor: '#555',
+                            borderWidth: 5,
+                            gapWidth: 1
+                        },
+                        emphasis: {
+                            borderColor: '#ddd'
+                        }
+                    }
+                },
+                {
+                    colorSaturation: [0.35, 0.5],
+                    itemStyle: {
+                        normal: {
+                            borderWidth: 5,
+                            gapWidth: 1,
+                            borderColorSaturation: 0.6
+                        }
+                    }
+                }
+            ];
+        }
+
+        myChart.setOption(option = {
+
+            title: {
+                text: 'CPA-会计大纲',
+                left: 'center'
+            },
+
+            tooltip: {
+                formatter: function (info) {
+                    var value = info.value;
+                    var treePathInfo = info.treePathInfo;
+                    var treePath = [];
+
+                    for (var i = 1; i < treePathInfo.length; i++) {
+                        treePath.push(treePathInfo[i].name);
+                    }
+
+                    return [
+                        '<div class="tooltip-title">' + formatUtil.encodeHTML(treePath.join('/')) + '</div>',
+                        '分数: ' + formatUtil.addCommas(value) ,
+                    ].join('');
+                }
+            },
+
+            series: [
+                {
+                    name:'CPA-会计',
+                    type:'treemap',
+                    visibleMin: 300,
+                    label: {
+                        show: true,
+                        formatter: '{b}'
+                    },
+                    upperLabel: {
+                        normal: {
+                            show: true,
+                            height: 30
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            borderColor: '#fff'
+                        }
+                    },
+                    levels: getLevelOption(),
+                    data: data
+                }
+            ]
+        });
+    });;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+</html>

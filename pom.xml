@@ -72,6 +72,14 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.41</version>
+        </dependency>
+
         <!--热部署插件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -80,6 +88,7 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>homepage</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

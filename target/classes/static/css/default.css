@@ -1,6 +1,6 @@
 html, body,body>div {width:100%;height:100%;} /*非常重要的样式让背景图片100%适应整个屏幕*/
-.bg {display: table;width: 100%;height: 100%;padding: 100px 0;text-align: center;color: #000;background: url(../img/default_background.jpg) repeat;background-color: #000}
-.my-navbar {padding:20px 0;transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;}
+.bg {display: table;width: 100%;height: 100%;padding: 50px 0;padding-bottom:100px;position:relative;text-align: center;color: #000;background: url(../img/default_background.jpg) repeat;background-color: #000}
+.my-navbar {transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;}
 .my-navbar a{background:transparent !important;color:#fff !important}
 .my-navbar a:hover {color:#45bcf9 !important;background:transparent;outline:0}
 .my-navbar a {transition: color 0.5s ease-in-out;}/*-webkit-transition ;-moz-transition*/
@@ -9,13 +9,11 @@ html, body,body>div {width:100%;height:100%;} /*非常重要的样式让背景�
 button.navbar-toggle {background-color:#fbfbfb;}/*整个背景都是transparent透明的，会看不到，所以再次覆盖一下*/
 button.navbar-toggle > span.icon-bar {background-color:#dedede}
 .footer{
-	margin: 0 auto;
-	position: absolute;
-	bottom: 40px;
-	left:0;
-	right:0;
-	text-align: center;
+	position:absolute;bottom:0;width:100%;height:50px;
 }
-.footer>div>p{
-	color: #F7F7F7;
+[v-cloak] {
+	display: none;
+}
+.alert-system{
+	display:none;
 }

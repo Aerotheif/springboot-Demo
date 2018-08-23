@@ -1,0 +1,170 @@
+<!--
+	作者：twist.uau@gmail.com
+	时间：2018-08-15
+	描述：项目模板
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>demo</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--default CSS-->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/animation.css">
+    <link rel="stylesheet" href="../../css/login.css" />
+</head>
+
+<body>
+<div id="vue" class="bg" v-cloak>
+    <!--导航栏开始-->
+    <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Aerothief</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="javacript:void(0);">Home</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Log out</a>
+                    </li>
+                    <li>
+                        <a href="javacript:void(0);">Contact us</a>
+                    </li>
+
+                    <!--<li>
+                        <a href="#">Asp.Net</a>
+                    </li>-->
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="input-group has-warning">
+                        <input type="text" class="form-control success" placeholder="search" aria-describedby="search">
+                        <span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--导航栏结束-->
+    <!--页面主题内容开始-->
+    <div class="main">
+        <div class="container">
+            <div class="jumbotron">
+                <h3>技能树录入</h3>
+                    <form role="form" class="form-inline">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="名称"  v-model="name" />
+                            <input type="text" class="form-control" placeholder="数值"  v-model="value"/>
+                            <label class="sr-only" for="father_select">父目录</label>
+                            <select class="form-control" id="father_select"  v-model="index">
+                                <option value="-1">顶级目录</option>
+                                <option v-bind:value="index" v-for="(skill_name,index) in skills_name">{{skill_name}}</option>
+                            </select>
+                            <button type="button" v-on:click="createSkill" class="btn btn-default">提交</button>
+                        </div>
+                    </form>
+                    <h3>技能树修改</h3>
+                    <table class="table table-striped table-hover">
+                        <tr>
+                            <th style="text-align: center">id</th>
+                            <th style="text-align: center">name</th>
+                            <th style="text-align: center">step</th>
+                            <th style="text-align: center">father_id</th>
+                            <th style="text-align: center">value</th>
+                            <th style="text-align: center">edit</th>
+                        </tr>
+                        <tr v-for="skill in skills">
+                            <td>{{skill.id}}</td>
+                            <td>{{skill.name}}</td>
+                            <td>{{skill.step}}</td>
+                            <td>{{skill.fatherId}}</td>
+                            <td>{{skill.value}}</td>
+                            <td><span class="glyphicon glyphicon-trash"></span>&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-pencil"></span></td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+    <!--页面主题内容结束-->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><strong>Aerothief HomePage</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp粤ICP备18032352号-1</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+<!--jQuery-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<!--const-->
+<script src="../../js/const.js"></script>
+<script>
+    var myVue=new Vue({
+        el:"#vue",
+        data:{
+            skills:[],
+            skills_name:[],
+            name:"",
+            value:"",
+            index:0
+        },
+        methods: {
+            getAllSkill: function () {
+                $.ajax({
+                    url: rootPath + "backend/skill/getAllSkill.do",
+                    success: function (data) {
+                        myVue.skills=[];
+                        myVue.skills_name=[];
+                        myVue.skills = myVue.skills.concat(data.data);
+                        for(var i=0;i<myVue.skills.length;i++){
+                            var string="";
+                            console.log(myVue.skills[i].step);
+                            for(var j=0;j<myVue.skills[i].step;j++){
+
+                                string+="·";
+                            }
+                            myVue.skills_name[i]=string+myVue.skills[i].name;
+                        }
+                    }
+                })
+            },
+            createSkill: function () {
+                var _this=this;
+                $.ajax({
+                    url:rootPath+"backend/skill/createSkill.do",
+                    data:{
+                        name:this.name,
+                        step:this.index==-1?0:this.skills[this.index].step+1,
+                        value:this.value,
+                        father_id:this.index==-1?-1:this.skills[this.index].id
+                    },
+                    success:function (data) {
+                        _this.getAllSkill();
+                        _this.name="";
+                    }
+                })
+            }
+        },
+        created:function () {
+            this.getAllSkill();
+        }
+    });
+</script>
+</html>

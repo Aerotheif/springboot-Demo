@@ -5,6 +5,7 @@ import com.aerothief.common.ServerResponse;
 import com.aerothief.model.User;
 import com.aerothief.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     /**
-     * 前台登录接口
+     * 用户登录
      * @param request
      * @param session
      * @return
@@ -41,5 +42,58 @@ public class UserController {
         return serverResponse;
     }
 
+    /**
+     * 用户名检验
+     * @param request
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "checkUsernameExist.do",method = RequestMethod.POST)
+    public ServerResponse checkUsername(ServletRequest request){
+        return userService.checkUsernameExist(request);
+    }
 
+    /**
+     * 注册
+     * @param request
+     * @param session
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="register.do",method = RequestMethod.POST)
+    public ServerResponse register(ServletRequest request,HttpSession session){
+        ServerResponse serverResponse=userService.registerExist(request);
+        if(serverResponse.isSuccess()){
+            session.setAttribute(Const.CURRENT_USER,serverResponse.getData());
+        }
+        return serverResponse;
+    }
+
+    /**
+     * 获取用户信息
+     * @param request
+     * @param session
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="getUserInfo.do",method = RequestMethod.POST)
+    public ServerResponse getUserInfo(ServletRequest request,HttpSession session){
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if(user != null){
+            return ServerResponse.createBySuccess(user);
+        }
+        return ServerResponse.createByErrorMessage("用户未登陆，无法获取当前用户信息");
+    }
+
+    /**
+     * 用户登出
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "logout.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> logout(HttpSession session){
+        session.removeAttribute(Const.CURRENT_USER);
+        return ServerResponse.createBySuccess();
+    }
 }

@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<div id="vue">
+<div id="vue" class="bg">
     <!--导航栏开始-->
     <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
         <div class="container-fluid">
@@ -39,7 +39,7 @@
                         <a href="javacript:void(0);">Home</a>
                     </li>
                     <li>
-                        <a v-on:click="change_form($event)" href="javacript:void(0);">Register</a>
+                        <a v-on:click="change_form($event)" href="javacript:void(0);" >Register</a>
                     </li>
                     <li>
                         <a href="javacript:void(0);">contact us</a>
@@ -60,15 +60,20 @@
     </nav>
     <!--导航栏结束-->
     <!--页面主题内容开始-->
-    <div class="bg">
+    <div class="main">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-10 col-xs-10 col-md-offset-3 col-sm-offset-1 col-xs-offset-1 login_register_father">
+                    <div class="alert alert-danger alert-system" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        {{alert_info}}
+                    </div>
                     <!--登录开始-->
                     <div class="login_div div_show_animation">
                         <p>登录</p>
                         <div class="input-group has-success">
-                            <input v-model="login_username" type="text" class="form-control" placeholder="username" aria-describedby="login_username">
+                            <input v-model="login_username" id="login_username_input" type="text" class="form-control" placeholder="username" aria-describedby="login_username">
                             <span class="input-group-addon" id="login_username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                         </div>
                         <div class="input-group has-warning">
@@ -85,26 +90,26 @@
                     <div class="register_div login_register_hidden">
                         <p>注册</p>
                         <div class="input-group has-success">
-                            <input type="text" class="form-control" placeholder="username" aria-describedby="username">
+                            <input v-on:blur="checkRegisterUserName()" v-model="register_username" type="text" class="form-control" placeholder="username" aria-describedby="username">
                             <span class="input-group-addon" id="username"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                         </div>
                         <div class="input-group has-warning">
-                            <input type="password" class="form-control" placeholder="password" aria-describedby="password">
+                            <input  v-model="register_password" type="password" class="form-control" placeholder="password" aria-describedby="password">
                             <span class="input-group-addon" id="password"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
                         </div>
-                        <button id="btn_register" type="button" class="btn btn-warning">注册</button>
+                        <button v-on:click="register()" id="btn_register" type="button" class="btn btn-warning">注册</button>
                     </div>
                     <!--注册结束-->
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container">
-                <p class="text-muted"><strong>Aerothief HomePage</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp粤ICP备18032352号-1</p>
-            </div>
-        </footer>
     </div>
     <!--页面主题内容结束-->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><strong>Aerothief HomePage</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp粤ICP备18032352号-1</p>
+        </div>
+    </footer>
 </div>
 </body>
 <!--jQuery-->
@@ -121,10 +126,14 @@
         data:{
             login_username:"",
             login_password:"",
-            login_remember_me:false
+            register_username:"",
+            register_password:"",
+            login_remember_me:false,
+            alert_info:""
         },
         methods: {
             change_form: function() {
+                this.hide_alert();
                 if($(event.currentTarget).text() == "Register") {
                     $(event.currentTarget).text("Login");
                     //							$(".login_div").addClass("login_register_hidden");
@@ -142,6 +151,7 @@
                 } else {
                     alert(1)
                 }
+
                 if(document.body.clientWidth < 750) {
                     $(".navbar-toggle").click();
                 }
@@ -149,21 +159,74 @@
             login:function () {
                 var _this=this;
                 $.post({
-                    url:localObj+"user/login.do",
+                    url:rootPath+"user/login.do",
                     data:{
                         username:this.login_username,
                         password:this.login_password,
                     },
                     success:function (data) {
-                        if(_this.login_remember_me){
-                            setCookie("username",_this.login_username);
-                            setCookie("password",_this.login_password);
+                        if(data.success==true){
+                            _this.addUserToCookie();
+                            window.location.href=rootPath+"html/photo.html";
                         }else{
-                            delCookie("username");
-                            delCookie("password");
+                            _this.alert_info=data.msg;
+                            $(".alert-system").fadeIn();
                         }
                     }
                 });
+            },
+            register:function(){
+                var _this=this;
+                $.post({
+                    url:rootPath+"user/register.do",
+                    data:{
+                        username:this.register_username,
+                        password:this.register_password,
+                    },
+                    success:function (data) {
+                        if(data.success==true){
+                            _this.alert_info="注册成功，即将跳转";
+                            $(".alert-system").removeClass("alert-danger").addClass("alert-success").fadeIn();
+                            setTimeout("my_vue.go_homepage(rootPath+'html/photo.html')", 1000);
+                            // setTimeout("alert()", 1000);
+                        }else{
+                            _this.alert_info=data.msg;
+                            $(".alert-system").fadeIn();
+                        }
+                    }
+                });
+            },
+            checkRegisterUserName:function(){
+                var _this=this;
+                $.post({
+                    url:rootPath+"user/checkUsernameExist.do",
+                    data:{
+                        username:this.register_username,
+                    },
+                    success:function (data) {
+                        if(!data.success){
+                            _this.alert_info=data.msg;
+                            $(".alert-system").fadeIn();
+                        }else{
+                            _this.hide_alert();
+                        }
+                    }
+                });
+            },
+            addUserToCookie:function () {
+                if(this.login_remember_me){
+                    setCookie("username",this.login_username);
+                    setCookie("password",this.login_password);
+                }else{
+                    delCookie("username");
+                    delCookie("password");
+                }
+            },
+            hide_alert:function(){
+                $(".alert-system").fadeOut();
+            },
+            go_homepage(url){
+                window.location.href=url;
             }
         },
         created:function () {
